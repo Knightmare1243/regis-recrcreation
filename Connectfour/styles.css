@@ -1,0 +1,37 @@
+/* Grid */
+
+#grid {
+
+	background-color: #f03fde;
+	border: 3.5px solid #d5deff;
+	border-radius: 8px;
+	box-shadow: 2px 3px 7px grey;
+	margin-top: 50px;
+	max-width: 150px;
+	padding: 3px;
+
+}
+
+/* Grid Row */
+
+.row {
+
+	display: flex;
+
+}
+
+/* Grid Column */
+
+.col {
+
+	align-items: center;
+	background-color: #e6261f;
+	border: 1px solid  #3ff05a;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	height: 75px;
+	margin: 5px;
+	width:  75px;
+
+}
