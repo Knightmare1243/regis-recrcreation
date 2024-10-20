@@ -7,7 +7,7 @@
 	border-radius: 8px;
 	box-shadow: 2px 3px 7px grey;
 	margin-top: 50px;
-	max-width: 150px;
+	max-width: 600px;
 	padding: 3px;
 
 }
@@ -34,4 +34,17 @@
 	margin: 5px;
 	width:  75px;
 
+}
+
+.btn {
+	background-color: transparent;
+	border: none;
+	color: transparent;
+	height: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+.btm-player-1{
+	color:#000000
 }
