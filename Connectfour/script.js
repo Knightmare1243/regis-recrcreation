@@ -15,9 +15,28 @@ for(var i = 0; i < buttons.length; i++){
             displayImage.src = image[total %2]
             displayImage.style.display = 'block'; // Show the image
         
-        window.alert("You pressed " + number + ". Total clicks: " + total);
+        //window.alert("You pressed " + number + ". Total clicks: " + total);
         total = total+1;
-        document.getElementById("myHeader").innerText = innertext+(total %2 +1);
+        document.querySelector("#title h1").innerText = innertext +(total %2 +1);
     });
 }
 //odd number = player 1 ; even number player 2
+
+//if 4 of the same image are together in one direction, the player of the turn wins.
+//at the end of each player's turn, scan will be made for the position of each images
+//for the same, it would be in any directions within a straight line such as right, left, up, down and diagonally.
+//[[][]]
+
+//pseudo code
+/*
+
+
+
+code
+
+
+*/
+
+
+
+//Errors to correct: Make sure that the buttons already pressed and now with images on them cannot be pressed by both players.

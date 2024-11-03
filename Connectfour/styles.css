@@ -1,4 +1,28 @@
-/* Grid */
+body {
+    background-color: #59b3be; /* Light blue color */
+	display: flex;              /* Use flexbox */
+    justify-content: center;    /* Center horizontally */
+    align-items: center;        /* Center vertically */
+    height: 100vh;              /* Full height of the viewport */
+    margin: 0;                  /* Remove default margin */}
+
+
+#title {
+		font-size: 2.5em;            /* Increase font size */
+		font-weight: bold;           /* Make text bold */
+		color: #D03982;              /* Change text color */
+		text-align: center;          /* Center the title */
+		margin: 20px 0;             /* Add margin above and below */
+		text-transform: uppercase;    /* Make text uppercase */
+		background-color: #f0be3f;  /* Optional: background color */
+		padding: 10px;               /* Add padding around text */
+		border-radius: 5px;          /* Rounded corners */
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow */
+	}
+
+
+
+	/* Grid */
 
 #grid {
 
@@ -7,6 +31,7 @@
 	border-radius: 8px;
 	box-shadow: 2px 3px 7px grey;
 	margin-top: 50px;
+	margin: auto;               /* Center horizontally */
 	max-width: 600px;
 	padding: 3px;
 
