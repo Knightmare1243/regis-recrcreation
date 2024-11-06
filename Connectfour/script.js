@@ -29,9 +29,21 @@ for(var i = 0; i < buttons.length; i++){
 
 //pseudo code
 /*
+def Victory():
+    if 4 of token 1 are aligned:
+        Print(Victory)
+    elif 4 of token 2 are aligned:
+        Print(Victory for player 2)
 
-
-
+def alignement:
+    check right
+        check cases+1
+    check right up to left down
+        check cases +8
+    check left up to right down
+        check cases + 6
+    check down
+        check cases +7
 code
 
 
