@@ -1,6 +1,11 @@
 var buttons = document.getElementsByClassName("btn");
 var total = 0
 
+
+
+
+
+
 // Single image URL
 var image = ["Token 1.gif","Token 2.gif"]; // Set a default image URL
 var innertext = "player "
@@ -19,6 +24,45 @@ for(var i = 0; i < buttons.length; i++){
         total = total+1;
         document.querySelector("#title h1").innerText = innertext +(total %2 +1);
     });
+}
+
+function check(accumulation, increment, edgeDetect) {
+    if (accumulation.length === 1 && edgeDetect(accumulation[accumulation.length - 1])) {
+        accumulation = [];
+    }
+
+    if (accumulation.length > 1 && accumulation[accumulation.length - 1] !== accumulation[accumulation.length - 2] + increment) {
+        accumulation = [accumulation[accumulation.length - 1]];
+    }
+
+    return accumulation;
+}
+
+function winner(proof) {
+    var accumulations = {
+        1: [],
+        6: [],
+        7: [],
+        8: []
+    };
+
+    const funcs = [
+        (a) => (a - 1) % 7 > 3,
+        (a) => (a - 1) % 7 < 3,
+        (_) => false,
+        (a) => (a - 1) % 7 > 3
+    ];
+
+    for (let j of proof) {
+        for (let [increment,value] of Object.entries(accumulations)) {
+            accumulations[increment].push(j);
+            accumulations[increment] = check(accumulations[increment], parseInt(increment), funcs[value]);
+            if (accumulations[increment].length === 4) {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 //odd number = player 1 ; even number player 2
 
