@@ -1,11 +1,6 @@
 var buttons = document.getElementsByClassName("btn");
 var total = 0
 
-
-
-
-
-
 // Single image URL
 var image = ["Token 1.gif","Token 2.gif"]; // Set a default image URL
 var innertext = "player "
@@ -52,11 +47,14 @@ function winner(proof) {
         (_) => false,
         (a) => (a - 1) % 7 > 3
     ];
-
+    
     for (let j of proof) {
-        for (let [increment,value] of Object.entries(accumulations)) {
+        for (let index =0; index<funcs.length;index++){
+            console.log(index)
+            increment = accumulations[index]
+        'for (let [increment,value] of Object.entries(accumulations)) {'
             accumulations[increment].push(j);
-            accumulations[increment] = check(accumulations[increment], parseInt(increment), funcs[value]);
+            accumulations[increment] = check(accumulations[increment], parseInt(increment), funcs[index]);
             if (accumulations[increment].length === 4) {
                 return true;
             }
@@ -64,6 +62,7 @@ function winner(proof) {
     }
     return false;
 }
+
 //odd number = player 1 ; even number player 2
 
 //if 4 of the same image are together in one direction, the player of the turn wins.

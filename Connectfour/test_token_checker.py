@@ -12,12 +12,15 @@ def winner(proof):
     accumulations = {1:[],6:[],7:[],8:[]}
     funcs = (lambda a: (a -1)%7 > 3, lambda a: (a -1)%7 < 3, lambda _: False, lambda a: (a -1)%7 > 3)
     for j in proof:
-        for k, increment in enumerate(accumulations):
-            accumulations[increment].append(j)
-            accumulations[increment] = check(accumulations[increment],increment,funcs[k])
-            if len(accumulations[increment]) == 4:
+        for index, value in enumerate(accumulations):
+            #value = accumulations[index]
+            accumulations[value].append(j)
+            accumulations[value] = check(accumulations[value], value, funcs[index])
+            if len(accumulations[value]) == 4:
                 return True
     return False
+print(winner[])
+winner([8,9,10,11])
     #    D_accumulation = [] # down
     #    R_accumulation = [] # right
     #    DR_accumulation = [] # diagonale right
