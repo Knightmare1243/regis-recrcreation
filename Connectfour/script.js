@@ -4,6 +4,7 @@ var total = 0
 // Single image URL
 var image = ["Token 1.gif","Token 2.gif"]; // Set a default image URL
 var innertext = "player "
+var turnGrid = [[],[]]
 for(var i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(){
         //buttons[i].classList.add("btn-player-1");
@@ -15,7 +16,13 @@ for(var i = 0; i < buttons.length; i++){
             displayImage.src = image[total %2]
             displayImage.style.display = 'block'; // Show the image
         
+        turnGrid[total %2].push(parseInt(number));
+        console.log(number)
+        console.log(turnGrid[total %2])
         //window.alert("You pressed " + number + ". Total clicks: " + total);
+        if (winner(turnGrid[total %2]) === true){
+            console.log("you've won")
+        }
         total = total+1;
         document.querySelector("#title h1").innerText = innertext +(total %2 +1);
     });
@@ -40,7 +47,7 @@ function winner(proof) {
         7: [],
         8: []
     };
-
+    diffs = [1,6,7,8]
     const funcs = [
         (a) => (a - 1) % 7 > 3,
         (a) => (a - 1) % 7 < 3,
@@ -50,8 +57,9 @@ function winner(proof) {
     
     for (let j of proof) {
         for (let index =0; index<funcs.length;index++){
-            console.log(index)
-            increment = accumulations[index]
+            index_2 = diffs[index]
+            increment = index_2
+            
         'for (let [increment,value] of Object.entries(accumulations)) {'
             accumulations[increment].push(j);
             accumulations[increment] = check(accumulations[increment], parseInt(increment), funcs[index]);

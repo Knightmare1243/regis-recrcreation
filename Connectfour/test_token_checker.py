@@ -19,7 +19,7 @@ def winner(proof):
             if len(accumulations[value]) == 4:
                 return True
     return False
-print(winner[])
+
 winner([8,9,10,11])
     #    D_accumulation = [] # down
     #    R_accumulation = [] # right
