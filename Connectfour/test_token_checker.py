@@ -20,6 +20,8 @@ def winner(proof):
                 return True
     return False
 
+# bang pop agorithm
+
 winner([8,9,10,11])
     #    D_accumulation = [] # down
     #    R_accumulation = [] # right
