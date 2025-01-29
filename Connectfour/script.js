@@ -25,6 +25,31 @@ for(var i = 0; i < buttons.length; i++){
     });
 }
 
+// Load the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/watch?v=4ACPpcGBbJs";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// Create a YouTube player after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '0', // Set height to 0 to hide the video
+        width: '0',  // Set width to 0 to hide the video
+        videoId: '4ACPpcGBbJs', // YouTube video ID
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+// The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+
 function winner(proof) {
     diffs = [1,6,7,8]
     const funcs = [
